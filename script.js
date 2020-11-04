@@ -31,25 +31,28 @@ function checkIfAnagram1(stringOne, stringTwo){
         if(arr1Sorted[i] !== arr2Sorted[i]) {
             answer = "not anagram";
         }
+        if (arr1Sorted.length !== arr2Sorted.length){
+            answer = "not anagram";
+        } 
     }    
     return answer;
 }
-console.log(checkIfAnagram1('Listen', 'sil ent'));
+console.log(checkIfAnagram1('abcd', 'abcde'));
 
 
-// Function using methods and forEach
-function checkIfAnagram2(stringOne, stringTwo){
-    let arr1Sorted = stringOne.replace(/ /g,'').toLowerCase().split("").sort();
-    let arr2Sorted = stringTwo.replace(/ /g,'').toLowerCase().split("").sort();
+// // Function using methods and forEach
+// function checkIfAnagram2(stringOne, stringTwo){
+//     let arr1Sorted = stringOne.replace(/ /g,'').toLowerCase().split("").sort();
+//     let arr2Sorted = stringTwo.replace(/ /g,'').toLowerCase().split("").sort();
 
-    let answer = "anagram";
+//     let answer = "anagram";
     
-    arr1Sorted.forEach((char, index) => {
-        char !== arr2Sorted[index] ? answer = "not anagram" : answer = "anagram";
-    })
-    return answer;
-}
-console.log(checkIfAnagram2('Listen', 'sil ent'));
+//     arr1Sorted.forEach((char, index) => {
+//         char !== arr2Sorted[index] ? answer = "not anagram" : answer = "anagram";
+//     })
+//     return answer;
+// }
+// console.log(checkIfAnagram2('Listen', 'sil ent'));
 
 // Factorials
 // In mathematics, the factorial of a positive integer n, denoted by n!, is the product of all positive integers less than or equal to n:
@@ -59,11 +62,12 @@ console.log(checkIfAnagram2('Listen', 'sil ent'));
 // Remember that factorial of 0 is 1 -> 0! = 1
 // Try to use only functions (no JS methods a part from if/else, only functions)
 
-// const factorial = num => {
-//     if(num === 0) return 1;
-//     else return num * factorial(num - 1);
-// };
-// console.log(factorial(0));
+const factorial = num => {
+    if(num === 0) return 1;
+    else return num * factorial(num - 1); // return 5 * 4!
+};
+console.log(factorial(5));
+
 
 // const factorial2 = num => {
 //     let result = 1;
@@ -72,4 +76,4 @@ console.log(checkIfAnagram2('Listen', 'sil ent'));
 //     }
 //     return result;
 // }
-// console.log(factorial2(5));
+// console.log(factorial2(0));
